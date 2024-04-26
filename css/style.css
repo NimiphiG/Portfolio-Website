@@ -1,15 +1,18 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
 }
-body{
+
+body {
     background: #1e1e1e;
 }
 
-.nav{
-  
+
+/* -----------------------------------------------nav system styles---------------------------------------------------- */
+.nav {
+
     height: 80px;
     display: flex;
     justify-content: center;
@@ -19,7 +22,8 @@ body{
     top: 0;
     z-index: 50;
 }
-.navContainer{
+
+.navContainer {
     display: flex;
     justify-content: space-between;
     height: 80px;
@@ -28,15 +32,14 @@ body{
     background-color: black;
     margin: 0 auto;
     padding: 0 50px;
-
 }
 
-#navLogo{
-    background-color: rgba(97,86,82,0.9 ) ;
-    background-image: linear-gradient(to top, rgba(97,86,82,0.9 )  0%, white 100%);
+#navLogo {
+    background-color: rgba(97, 86, 82, 0.9);
+    background-image: linear-gradient(to top, rgba(97, 86, 82, 0.9) 0%, white 100%);
     background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
+    background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     display: flex;
     align-items: center;
@@ -45,7 +48,7 @@ body{
     cursor: pointer;
 }
 
-.navMenu{
+.navMenu {
     display: flex;
     align-items: center;
     list-style: none;
@@ -57,7 +60,7 @@ body{
 }
 
 .navLinks {
-    color: rgba(97,86,82,0.9 ) ;
+    color: rgba(97, 86, 82, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,13 +69,27 @@ body{
     height: 100%;
 }
 
-.navLinks:hover{
+.navLinks:hover {
     color: white;
     transition: all 0.3s ease;
 }
 
+.socialsLinkBar{
+          display: flex;                   
+}
+
+.socialsLink {
+    margin: 25px;
+    height: 30px;
+    opacity: 80%;
+    cursor: pointer;
+
+}
+
+/* -----------------------------------------------screen responsive styles---------------------------------------------------- */
+
 @media screen and (max-width:960px) {
-    .navContainer{
+    .navContainer {
         display: flex;
         justify-content: space-between;
         height: 80px;
@@ -82,7 +99,7 @@ body{
         padding: 0;
     }
 
-    .navMenu{
+    .navMenu {
         display: grid;
         grid-template-columns: auto;
         margin: 0;
@@ -94,8 +111,9 @@ body{
         height: 50vw;
         z-index: -1;
     }
-    .navMenu.active{
-        background-color: black ;
+
+    .navMenu.active {
+        background-color: black;
         top: 100%;
         opacity: 1;
         transition: all 0.5s ease;
@@ -104,124 +122,125 @@ body{
         font-size: 1.6rem;
     }
 
-    #navlogo{
+    #navlogo {
         padding-left: 25px;
     }
+
+    .navToggle {
+        margin-top: auto;
+        margin-bottom: auto;
+        cursor: pointer;
+    }
+
     .navToggle .bar {
         width: 25px;
         height: 3px;
         margin: 10px 10px;
-        transition: all 0.3s ease-in-out;
+        /* transition: all 0.3s ease-in-out; */
         background-color: white;
         display: block;
-        cursor: pointer;
+
         color: white;
     }
 
-    .navItem{
+    .navItem {
         width: 100%;
     }
 
-    .navLinks{
+    .navLinks {
         text-align: center;
         padding: 2rem;
         width: 100%;
         display: table;
     }
 
-    #mobleMenu{
+    #mobleMenu {
         position: absolute;
         top: 20%;
         right: 5%;
-        transform: translate(5%,20%);
-        
-       
+        transform: translate(5%, 20%);
     }
 
-    #mobleMenu.is-active .bar:nth-child(2){
+    #mobleMenu.is-active .bar:nth-child(2) {
         opacity: 0;
     }
-    #mobleMenu.is-active .bar:nth-child(1){
-        transform: translateY(8px) rotate(45deg) ;
-    }
-    #mobleMenu.is-active .bar:nth-child(3){
-        transform: translateY(-8px) rotate(-45deg) ;
-    }
-   
 
-    
+    #mobleMenu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #mobleMenu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }
 
 
+.title {
 
-.title{
-
-    font-size:5vw;
-    color: rgba(97,86,82,0.9 );
+    font-size: 5vw;
+    color: rgba(97, 86, 82, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
 }
 
+/* ----------------------------------------------- drawing gallery styles---------------------------------------------------- */
 
-
-.img-gallery{
-width: 1fr;
-margin: 10px ;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-grid-gap: 10px;
+.img-gallery {
+    width: 1fr;
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 10px;
 
 }
 
-.img-gallery img{
+.img-gallery img {
     width: 100%;
     height: 250px;
     object-fit: cover;
     cursor: pointer;
-    border: rgba(97,86,82,0.9) solid 0spx;
+    border: rgba(97, 86, 82, 0.9) solid 0spx;
     border-radius: 10px;
-    background-color: rgba(97,86,82,1);
+    background-color: rgba(97, 86, 82, 1);
     border-radius: 5px;
 
 }
 
-.img-gallery img:hover{
+.img-gallery img:hover {
     transition: all 0.3s ease;
-    object-fit:contain;
-     transform: scale(1);
-     border: rgba(97,86,82,0.9) solid 0px;
-     border-radius: 5px;
-     background-color: rgba(97,86,82,1);
-     z-index: 100;
-     
+    object-fit: contain;
+    transform: scale(1);
+    border: rgba(97, 86, 82, 0.9) solid 0px;
+    border-radius: 5px;
+    background-color: rgba(97, 86, 82, 1);
+    z-index: 100;
+
 }
 
-
-.full-img{
+.full-img {
     width: 100%;
     height: 100vh;
-    background-color: rgba(29, 29, 29, 0.9) ;
+    background-color: rgba(29, 29, 29, 0.9);
     position: fixed;
     top: 0;
     left: 0;
-    display:none;
+    display: none;
     align-items: center;
     justify-content: center;
     z-index: 40;
 }
 
-
-.full-img img{
-   width: 90%;
-   max-width: 800px;
-   max-height: 800px;
-   object-fit: contain;
+.full-img img {
+    width: 90%;
+    max-width: 800px;
+    max-height: 800px;
+    object-fit: contain;
 }
 
-.full-img span{
-    position:absolute;
+.full-img span {
+    position: absolute;
     top: 10%;
     right: 10%;
     font-size: 2vw;
@@ -229,7 +248,7 @@ grid-gap: 10px;
     cursor: pointer;
 }
 
-#refLinks{
+#refLinks {
     margin: 5vw;
     padding: 3vw;
     color: rgb(125, 112, 107);
@@ -238,103 +257,108 @@ grid-gap: 10px;
 
 }
 
-#refUse{
+#refUse {
     display: none;
 }
 
-/* paintings */
+/* -----------------------------------------------painting galery styles---------------------------------------------------- */
 
 .img-gallery-p {
     width: 100%;
     margin: 10px auto 50px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 10px;
-    
-    }
-    
-    .img-gallery-p img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        cursor: pointer;
-        border: rgba(97,86,82,0.9) solid 0spx;
-        border-radius: 10px;
-        background-color: rgba(97,86,82,1);
-        border-radius: 5px;
-    
-    }
-    
-    .img-gallery-p img:hover{
-        padding: 10px;
-         border: rgba(97,86,82,0.9) solid 0px;
-         border-radius: 5px;
-         background-color: rgba(97,86,82,1);
-         z-index: 100;
-         transition: all 0.4s ease;
-       
-    }
-    
-    
-    .full-img-p {
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(29, 29, 29, 0.9) ;
-        position: fixed;
-        top: 0;
-        left: 0;
-        display:none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        z-index: 40;
-    }
-    
-    
-    .full-img-p img{
-       width: 90%;
-       max-width: 800px;
-       max-height: 800px;
-       object-fit: contain;
-    }
-    
-    .full-img-p span{
-        position:absolute;
-        top: 10%;
-        right: 10%;
-        font-size: 2vw;
-        color: white;
-        cursor: pointer;
-    }
-    
-    .infoBox{
-        display: flexbox;
-    }
 
-    #paintingTitle{
-    
-        color: rgba(97,86,82,0.9 ) ;
-        margin-bottom: 10px;
-       
-    }
+}
 
-    #aboutContainer{
-        display: flex;
-        flex-direction: column;
-        background-image: url(/images/paintings/painting\ \(3\).jpg);
-        
-    }
+.img-gallery-p img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    border: rgba(97, 86, 82, 0.9) solid 0spx;
+    border-radius: 10px;
+    background-color: rgba(97, 86, 82, 1);
+    border-radius: 5px;
 
-    #aboutTitle{
-        font-size: 50px;
-    }
+}
 
-    #photo{
-        max-height: 250px;
-        width: 100%;
-        object-fit: contain;
-    }
+.img-gallery-p img:hover {
+    padding: 10px;
+    object-fit: contain;
+    border: rgba(97, 86, 82, 0.9) solid 0px;
+    border-radius: 5px;
+    background-color: rgba(97, 86, 82, 1);
+    z-index: 100;
+    transition: all 0.4s ease;
 
-    #aboutText{
-        font-size: 30px;
-    }
+}
+
+.full-img-p {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(29, 29, 29, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 40;
+}
+
+.full-img-p img {
+    width: 90%;
+    max-width: 800px;
+    max-height: 800px;
+    object-fit: contain;
+}
+
+.full-img-p span {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    font-size: 2vw;
+    color: white;
+    cursor: pointer;
+}
+
+.infoBox {
+    display: flexbox;
+}
+
+#paintingTitle {
+
+    color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+
+}
+
+.paintingInfo{
+    color: white
+}
+
+/* -----------------------------------------------about styles---------------------------------------------------- */
+
+#aboutContainer {
+    display: flex;
+    flex-direction: column;
+    background-image: url(/images/paintings/painting\ \(3\).jpg);
+
+}
+
+#aboutTitle {
+    font-size: 50px;
+}
+
+#photo {
+    max-height: 250px;
+    width: 100%;
+    object-fit: contain;
+}
+
+#aboutText {
+    font-size: 30px;
+}
