@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Drawings</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/imagefunction.js" defer></script>
+    <div id="pageCounter" class="drawings"></div>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="navContainer">
+            <a href="/homePage.html" id="navLogo">Georgina Docherty</a>
+            <div class="navToggle" id="mobileMenu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navMenu">
+                <li class="navItem">
+                    <a href="/homePage.html" class="navLinks">Home</a>
+                </li>
+
+                <li class="navItem">
+                    <a href="/paintings.html" class="navLinks">Paintings</a>
+                </li>
+                <li class="navItem">
+                    <a href="/lifeDrawing.html" class="navLinks">Drawings</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div id="gallery-container">
+        <div class="full-img" id="fullImgBox">
+            <img src="images/lifeDrawings/LifeDrawing (1).jpg" id="fullImg">
+            <span onclick="closeFullImg()">X</span>
+            <a id="refLinks">This Drawing Doesn't Feature In Any Paintings Yet</a>
+            <img src='images/paintings/painting (1).jpg' id="refUse"></img>
+        </div>
+
+        <div class="img-gallery" id="img-gallery">
+
+        </div>
+    </div>
+</body>
