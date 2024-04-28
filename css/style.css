@@ -215,7 +215,7 @@ body {
     border: rgba(97, 86, 82, 0.9) solid 0px;
     border-radius: 5px;
     background-color: rgba(97, 86, 82, 1);
-    z-index: 100;
+    transition: all 0.4s ease;
 
 }
 
@@ -290,17 +290,19 @@ body {
     border: rgba(97, 86, 82, 0.9) solid 0px;
     border-radius: 5px;
     background-color: rgba(97, 86, 82, 1);
-    z-index: 100;
+   
     transition: all 0.4s ease;
 
 }
+
+
 
 .full-img-p {
     width: 100%;
     height: 100vh;
     background-color: rgba(29, 29, 29, 0.9);
     position: fixed;
-    top: 0;
+    top: 80px;
     left: 0;
     display: none;
     flex-direction: column;
@@ -326,7 +328,11 @@ body {
 }
 
 .infoBox {
-    display: flexbox;
+    text-align: center;
+   
+    background-color: black;
+    height: 500px;
+    width: 80vw;
 }
 
 #paintingTitle {
@@ -336,8 +342,9 @@ body {
 
 }
 
-.paintingInfo{
-    color: white
+#paintingInfo{
+  background-color: blue;
+  height: 200px;
 }
 
 /* -----------------------------------------------about styles---------------------------------------------------- */
@@ -361,4 +368,74 @@ body {
 
 #aboutText {
     font-size: 30px;
+}
+
+
+/* -----------------------------------------------iframe styles---------------------------------------------------- */
+
+
+.iframeContainer{
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+.iframe{
+    border: 0;
+    width: 50vw;
+    height: 50vw;
+}
+
+.img-gallery-c {
+    width: 100%;
+    margin: 10px auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 10px;
+
+}
+
+.img-gallery-c img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    border: rgba(97, 86, 82, 0.9) solid 0spx;
+    border-radius: 10px;
+    background-color: rgba(97, 86, 82, 1);
+    border-radius: 5px;
+
+}
+
+.img-gallery-c img:hover {
+    padding: 10px;
+    object-fit: contain;
+    border: rgba(97, 86, 82, 0.9) solid 0px;
+    border-radius: 5px;
+    background-color: rgba(97, 86, 82, 1);
+   
+    transition: all 0.4s ease;
+
+}
+
+#fullIframeBox {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(29, 29, 29, 0.9);
+    position: fixed;
+    top: 80px;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 40;
+}
+
+#fullIframeBox span {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    font-size: 2vw;
+    color: white;
+    cursor: pointer;
 }

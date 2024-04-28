@@ -7,11 +7,14 @@ var fullImgBox = document.getElementById("fullImgBox");
 var fullImg = document.getElementById("fullImg");
 var fullImgBoxP = document.getElementById("fullImgBox-p");
 var fullImgP = document.getElementById("fullImg-p");
-var PaintingTitle = document.getElementById('paintingTitle');
+var paintingTitle = document.getElementById("paintingTitle");
+var paintingInfo = document.getElementById('paintingInfo');
 var refUse = document.getElementById('refUse');
 const path = localStorage.getItem('userRef');
-let refrence = document.getElementById('refLinks')
+let refrence = document.getElementById('refLinks');
 let painting = false;
+var iframe = document.getElementById('fullIframe');
+var iframeBox = document.getElementById('fullIframeBox');
 console.log(path);
 
 const menu = document.querySelector('#mobileMenu');
@@ -35,27 +38,40 @@ function openFullImg(pic) {
     // localStorage.clear();
     console.log('clear')
 
-    if (pic === 'http://127.0.0.1:5500/images/lifeDrawings/lifeDrawing%20(23).jpg' || pic === 'http://127.0.0.1:5500/images/lifeDrawings/lifeDrawing%20(37).jpg') {
+    if (pic === 'http://127.0.0.1:5500/Portfolio-Website/images/lifeDrawings/lifeDrawing%20(23).jpg' || pic === 'http://127.0.0.1:5500/Portfolio-Website/images/lifeDrawings/lifeDrawing%20(37).jpg') {
         painting = true
-        refrence.setAttribute('href', "/paintings.html");
+        refrence.setAttribute('href', "/Portfolio-Website/paintings.html");
         refrence.innerHTML = 'This drawing was used in the making of a painting. click to go to paintings';
-        refUse.src = 'http://127.0.0.1:5500/images/paintings/painting%20(1).jpg';
+        refUse.src = 'http://127.0.0.1:5500/Portfolio-Website/images/paintings/painting%20(5).jpg';
         console.log('the claw');
         refUse.style.display = 'flex';
     }
-
-    if (pic === 'http://127.0.0.1:5500/images/lifeDrawings/lifeDrawing%20(5).jpg' || pic === 'http://127.0.0.1:5500/images/lifeDrawings/lifeDrawing%20(12).jpg' || pic === 'http://127.0.0.1:5500/images/lifeDrawings/lifeDrawing%20(40).jpg') {
+    if (pic === 'http://127.0.0.1:5500/Portfolio-Website/images/lifeDrawings/lifeDrawing%20(5).jpg' || pic === 'http://127.0.0.1:5500/Portfolio-Website/images/lifeDrawings/lifeDrawing%20(12).jpg' || pic === 'http://127.0.0.1:5500/Portfolio-Website/images/lifeDrawings/lifeDrawing%20(40).jpg') {
         painting = true
-        refrence.setAttribute('href', "/paintings.html");
+        refrence.setAttribute('href', "/Portfolio-Website/paintings.html");
         refrence.innerHTML = 'This drawing was used in the making of a painting. click to go to paintings';
-        refUse.src = 'http://127.0.0.1:5500/images/paintings/painting%20(2).jpg';
+        refUse.src = 'http://127.0.0.1:5500/Portfolio-Website/images/paintings/painting%20(4).jpg';
         refUse.style.display = 'flex';
     }
-    if (pic === 'http://127.0.0.1:5500/images/lifeDrawings/lifeDrawing%20(55).jpg') {
+    if (pic === 'http://127.0.0.1:5500/Portfolio-Website/images/lifeDrawings/lifeDrawing%20(55).jpg') {
         painting = true
-        refrence.setAttribute('href', "/paintings.html");
+        refrence.setAttribute('href', "/Portfolio-Website/paintings.html");
         refrence.innerHTML = 'This drawing was used in the making of a painting. click to go to paintings';
-        refUse.src = 'http://127.0.0.1:5500/images/paintings/painting%20(3).jpg';
+        refUse.src = 'http://127.0.0.1:5500/Portfolio-Website/images/paintings/painting%20(3).jpg';
+        refUse.style.display = 'flex';
+    }
+    if (pic === 'http://127.0.0.1:5500/Portfolio-Website/images/lifeDrawings/lifeDrawing%20(53).jpg') {
+        painting = true
+        refrence.setAttribute('href', "/Portfolio-Website/paintings.html");
+        refrence.innerHTML = 'This drawing was used in the making of a painting. click to go to paintings';
+        refUse.src = 'http://127.0.0.1:5500/Portfolio-Website/images/paintings/painting%20(1).jpg';
+        refUse.style.display = 'flex';
+    }
+    if (pic === 'http://127.0.0.1:5500/Portfolio-Website/images/lifeDrawings/lifeDrawing%20(54).jpg' || pic === 'http://127.0.0.1:5500/Portfolio-Website/images/lifeDrawings/lifeDrawing%20(56).jpg') {
+        painting = true
+        refrence.setAttribute('href', "/Portfolio-Website/paintings.html");
+        refrence.innerHTML = 'This drawing was used in the making of a painting. click to go to paintings';
+        refUse.src = 'http://127.0.0.1:5500/Portfolio-Website/images/paintings/painting%20(2).jpg';
         refUse.style.display = 'flex';
     }
 
@@ -69,12 +85,12 @@ function openFullImg(pic) {
     fullImg.src = pic;
     console.log('open');
     console.log(pic);
-    localStorage.setItem('userRef', refUse.src)
+    localStorage.setItem('userRef', refUse.src);
 }
 function closeFullImg() {
     fullImgBox.style.display = "none";
     localStorage.clear();
-    painting = false
+    painting = false;
 }
 //-------------------------open and close full screen painting image and title function --------------------------//
 
@@ -85,30 +101,64 @@ function openFullImgP(pic) {
     console.log(pic);
     localStorage.clear();
 
-    if (pic === 'http://127.0.0.1:5500/images/paintings/painting%20(0).jpg') {
-        PaintingTitle.innerHTML = "' RGB - Rattle Babble Grapple '"
+    if (pic === 'http://127.0.0.1:5500/Portfolio-Website/images/paintings/painting%20(0).jpg') {
+        paintingTitle.innerHTML = "' RGB - Rattle Babble Grapple '";
+        paintingInfo.src = "/Portfolio-Website/text/RGB.txt";
+
+    };
+    if (pic === 'http://127.0.0.1:5500/Portfolio-Website/images/paintings/painting%20(1).jpg') {
+        paintingTitle.innerHTML = "' RGB - Rattle '";
+        paintingInfo.src = "/Portfolio-Website/text/Rattle.txt";
     }
-    if (pic === 'http://127.0.0.1:5500/images/paintings/painting%20(1).jpg') {
-        PaintingTitle.innerHTML = "' RGB - Rattle '"
-    }
-    if (pic === 'http://127.0.0.1:5500/images/paintings/painting%20(2).jpg') {
-        PaintingTitle.innerHTML = "' RGB - Babble '"
-    }
-    if (pic === 'http://127.0.0.1:5500/images/paintings/painting%20(3).jpg') {
-        PaintingTitle.innerHTML = "' RBG - Grapple '"
-    }
-    if (pic === 'http://127.0.0.1:5500/images/paintings/painting%20(4).jpg') {
-        PaintingTitle.innerHTML = "' Hubba Bubba '"
-    }
-    if (pic === 'http://127.0.0.1:5500/images/paintings/painting%20(5).jpg') {
-        PaintingTitle.innerHTML = "' The Claw '"
-    }
+    if (pic === 'http://127.0.0.1:5500/Portfolio-Website/images/paintings/painting%20(2).jpg') {
+        paintingTitle.innerHTML = "' RGB - Babble '";
+        paintingInfo.src = "/Portfolio-Website/text/Babble.txt";
+    };
+    if (pic === 'http://127.0.0.1:5500/Portfolio-Website/images/paintings/painting%20(3).jpg') {
+        paintingTitle.innerHTML = "' RBG - Grapple '";
+        paintingInfo.src = "/Portfolio-Website/text/Grapple.txt";
+    };
+    if (pic === 'http://127.0.0.1:5500/Portfolio-Website/images/paintings/painting%20(4).jpg') {
+        paintingTitle.innerHTML = "' Hubba Bubba '";
+        paintingInfo.src = "/Portfolio-Website/text/HubbaBubba.txt";
+    };
+    if (pic === 'http://127.0.0.1:5500/Portfolio-Website/images/paintings/painting%20(5).jpg') {
+        paintingTitle.innerHTML = "' The Claw '";
+        paintingInfo.src = "/Portfolio-Website/text/TheClaw.txt";
+    };
 }
 
 function closeFullImgP() {
     fullImgBoxP.style.display = "none";
 }
 
+//-------------------------open and close coding iframe --------------------------//
+
+
+function openIframe(pic) {
+    iframeBox.style.display = "flex";
+
+    if (pic === 'http://127.0.0.1:5500/Portfolio-Website/images/coding/code%20(1).jpg') {
+       iframe.src = '/Algorithmic-Art-2/crochet.html'
+    };
+    if (pic === 'http://127.0.0.1:5500/Portfolio-Website/images/coding/code%20(2).jpg') {
+        iframe.src = '/Algorithmic-Art-2/afformations.html'
+    }
+    if (pic === 'http://127.0.0.1:5500/Portfolio-Website/images/coding/code%20(3).jpg') {
+        iframe.src = '/Algoritmic-Art-1/index.html'
+    };
+    if (pic === 'http://127.0.0.1:5500/Portfolio-Website/images/coding/code%20(4).jpg') {
+        iframe.src = '/Algorithmic-Art-3/1nClassExamples/recursion2.html'
+    };
+    if (pic === 'http://127.0.0.1:5500/Portfolio-Website/images/coding/code%20(5).jpg') {
+        iframe.src = '/Algorithmic-Art-3/1nClassExamples/recursion1.html'
+    };
+ 
+}
+
+function closeIframe() {
+    iframeBox.style.display = "none";
+}
 
 //-------------------------random gallery set up --------------------------//
 
@@ -141,23 +191,33 @@ function setup() {
 
             let img = document.createElement('img');
             img.src = 'images/paintings/painting (' + i + ').jpg';
-            img.id = 'clickable' + i;
+            // img.id = 'clickable' + i;
             img.setAttribute('onclick', 'openFullImgP(this.src)');
             document.getElementById('img-gallery').appendChild(img);
         }
 
-        // for (i = 0; i < 2; i++) {
 
-        //     let rand = Math.floor(Math.random() * (5 - i));
-
-        //     let img = document.createElement('img');
-        //     img.src = 'images/paintings/painting (' + list[rand] + ').jpg';
-        //     img.id = 'clickable' + i;
-        //     img.setAttribute('onclick', 'openFullImgP(this.src)');
-        //     document.getElementById('img-gallery').appendChild(img);
-        //     list.splice(rand, 1);
-        // }
 
     }
+    if (page.className === 'coding') {
+        for (i = 1; i < 6; i++) {
 
+            let img = document.createElement('img');
+            img.src = 'images/coding/code (' + i + ').jpg';
+            // img.id = 'clickable' + i;
+            img.setAttribute('onclick', 'openIframe(this.src)');
+            document.getElementById('img-gallery-c').appendChild(img);
+        }
+    }
 }
+// for (i = 0; i < 2; i++) {
+
+//     let rand = Math.floor(Math.random() * (5 - i));
+
+//     let img = document.createElement('img');
+//     img.src = 'images/paintings/painting (' + list[rand] + ').jpg';
+//     img.id = 'clickable' + i;
+//     img.setAttribute('onclick', 'openFullImgP(this.src)');
+//     document.getElementById('img-gallery').appendChild(img);
+//     list.splice(rand, 1);
+// }
