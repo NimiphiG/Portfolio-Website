@@ -139,19 +139,19 @@ function openIframe(pic) {
     iframeBox.style.display = "flex";
 
     if (pic === 'http://127.0.0.1:5500/Portfolio-Website/images/coding/code%20(1).jpg') {
-       iframe.src = '/Algorithmic-Art-2/crochet.html'
+       iframe.src = 'Algorithmic-Art-2/crochet.html'
     };
     if (pic === 'http://127.0.0.1:5500/Portfolio-Website/images/coding/code%20(2).jpg') {
-        iframe.src = '/Algorithmic-Art-2/afformations.html'
+        iframe.src = 'Algorithmic-Art-2/afformations.html'
     }
     if (pic === 'http://127.0.0.1:5500/Portfolio-Website/images/coding/code%20(3).jpg') {
-        iframe.src = '/Algoritmic-Art-1/index.html'
+        iframe.src = 'Algoritmic-Art-1/index.html'
     };
     if (pic === 'http://127.0.0.1:5500/Portfolio-Website/images/coding/code%20(4).jpg') {
-        iframe.src = '/Algorithmic-Art-3/1nClassExamples/recursion2.html'
+        iframe.src = 'Algorithmic-Art-3/1nClassExamples/recursion2.html'
     };
     if (pic === 'http://127.0.0.1:5500/Portfolio-Website/images/coding/code%20(5).jpg') {
-        iframe.src = '/Algorithmic-Art-3/1nClassExamples/recursion1.html'
+        iframe.src = 'Algorithmic-Art-3/1nClassExamples/recursion1.html'
     };
  
 }
